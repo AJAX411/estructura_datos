@@ -7,7 +7,7 @@ numeros = [valor1, valor2, valor3]
 numero_mayor = max(numeros)
 numero_menor= min(numeros)
 print(f"El número mayor es {numero_mayor} y el menor es {numero_menor}.")'''
-
+#------------------------------------------------------------------------------
 '''#segundo ejercicio en clase de estructura de datos.
 print("Vamos a determinar si un numero es par o impar.")
 numero_par_impar = int(input("Ingrese un numero: "))
@@ -15,7 +15,7 @@ if numero_par_impar % 2 == 0:
   print(numero_par_impar, "es un numero par.")
 else:
   print(numero_par_impar, "es un numero impar.")'''
-
+#------------------------------------------------------------------------------
 '''#tercer ejercicio en clase de estructura de datos.
 print("Aqui vamos a sumar, restar y dividir.")
 numero_1 = int(input("Ingrese un numero: "))
@@ -34,7 +34,7 @@ elif operacion == 2:
 elif operacion == 3:
   division = numero_1 / numero_2
   print("El resultado de la division es", division)'''
-
+#------------------------------------------------------------------------------
 '''#cuarto ejercicio en clase de estructura de datos.
 print("vamos a calcular su IMC.")
 peso = int(input("Ingrese su peso: "))
