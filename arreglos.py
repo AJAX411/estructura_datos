@@ -15,3 +15,12 @@ promedio = sum(numeros_aleatorios) / len(numeros_aleatorios)
 print("el promedio de los numeros es ", promedio)'''
 
 #cuarto ejercicio
+print("Aqui vamos a calcular el factorial de un numero.")
+numero = int(input("ingrese el numero: "))
+
+factorial = 1
+
+for i in range(1, numero + 1):
+    factorial = factorial * i
+
+print(f"El factorial de {numero} es {factorial}")
