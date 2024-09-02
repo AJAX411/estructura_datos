@@ -51,8 +51,15 @@ else:
 
 #Ejercicio 4 generador de contraceña
 
-'''def generador_contra(cant_caracteres):
+import random
+import string
 
+def generador_contra(cant_caracteres):
+    caracteres = string.ascii_letters + string.digits
+    contraseña = ''.join(random.choice(caracteres) for _ in range(cant_caracteres))
+    return contraseña
 
-print("Aqui vamos a generar contracenas aleatorias.")
-cant_caracteres = int(input("ingrese la cantidad de caracteres a generar: "))'''
+print("Aqui vamos a generar contraceñas aleatorias.")
+cant_caracteres = int(input("ingrese la cantidad de caracteres a generar: "))
+contraseña = generador_contra(cant_caracteres)
+print(f'La contraseña generada es: {contraseña}')
