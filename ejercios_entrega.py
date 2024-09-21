@@ -63,13 +63,6 @@ lista_animales.imprimir_bucle()'''
 
 from datetime import datetime
 
-
-class Nodo:
-    def __init__(self, tarea=None):
-        self.tarea = tarea  
-        self.siguiente = None  
-
-
 class Tarea:
     def __init__(self, descripcion, prioridad, fecha_vencimiento):
         self.descripcion = descripcion
@@ -79,6 +72,10 @@ class Tarea:
     def __str__(self):
         return f"Descripción: {self.descripcion}, Prioridad: {self.prioridad}, Fecha de Vencimiento: {self.fecha_vencimiento}"
 
+class Nodo:
+    def __init__(self, tarea=None):
+        self.tarea = tarea  
+        self.siguiente = None  
 
 class ListaEnlazada:
     def __init__(self):
@@ -87,8 +84,6 @@ class ListaEnlazada:
     
     def agregar_tarea(self, nueva_tarea):
         nuevo_nodo = Nodo(nueva_tarea)
-
-        
         if self.cabeza is None:
             self.cabeza = nuevo_nodo
         else:
