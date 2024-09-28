@@ -61,7 +61,7 @@ lista_animales.imprimir_bucle()'''
 #----------------------------------------------------------------------------------------------------------------
 #Ejercicio 2: Diseña e implementa un sistema de gestión de tareas utilizando listas enlazadas.
 
-from datetime import datetime
+'''from datetime import datetime
 
 class Tarea:
     def __init__(self, descripcion, prioridad, fecha_vencimiento):
@@ -195,4 +195,35 @@ def menu():
             print("Opción no válida. Por favor, intente de nuevo.")
 
 #Aqui se llama al menú 
-menu()
+menu()'''
+
+#Aqui se explica el funcionamiento de las pilas en
+class Pila:
+    def __init__(self):
+        self.elementos = [1,2,3,4,5,6,7,8,9]
+    
+    def push(self, elementos):
+        self.elementos.append(elementos)
+
+    def pop(self):
+        return self.elementos.pop()
+    
+    def peek(self):
+        return self.elementos[len(self.elementos)-1]
+    
+    def isEmpty(self):
+        return self.elementos == []
+
+my_pila = Pila()
+
+print("La pila actual es:", my_pila.elementos)
+print("\nAhora vamos a agregar un elemento a la pila.")
+my_pila.push(10)
+print("Ahora la pila se ve asi:", my_pila.elementos)
+print("\nAhora vamos a eliminar el ultimo elemento.")
+my_pila.pop()
+print("Ahora la pila se ve asi:", my_pila.elementos)
+print("\nAhora vamos a ver el ultimo elemento de la lista")
+print("El ultimo elemento es:", my_pila.peek())
+print("\n¿Esta la pila vacía?") 
+print(my_pila.isEmpty())
