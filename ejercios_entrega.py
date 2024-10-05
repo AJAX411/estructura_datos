@@ -198,7 +198,7 @@ def menu():
 menu()'''
 
 #Aqui se explica el funcionamiento de las pilas en
-class Pila:
+'''class Pila:
     def __init__(self):
         self.elementos = [1,2,3,4,5,6,7,8,9]
     
@@ -226,4 +226,75 @@ print("Ahora la pila se ve asi:", my_pila.elementos)
 print("\nAhora vamos a ver el ultimo elemento de la lista")
 print("El ultimo elemento es:", my_pila.peek())
 print("\n¿Esta la pila vacía?") 
-print(my_pila.isEmpty())
+print(my_pila.isEmpty())'''
+
+
+#trabajo de colas (modelo de colas que formará parte integral de un nuevo sistema operativo)
+import heapq
+
+# Iniciamos con la clase tarea
+class Tarea:
+    def __init__(self, nombre, tiempo_ejecucion:int, recursos:int):
+        self.nombre = nombre
+        self.tiempo_ejecucion = tiempo_ejecucion
+        self.recursos = recursos
+
+    def __lt__(self, otra):
+        # Definir prioridad: Menor tiempo y recursos tienen más prioridad
+        if self.tiempo_ejecucion == otra.tiempo_ejecucion:
+            return self.recursos < otra.recursos
+        return self.tiempo_ejecucion < otra.tiempo_ejecucion
+#luego creamos la clase de la cola simple
+class Colasimple:
+    def __init__(self):
+        self.cola_simple = []
+
+    def agregar_tarea(self, tarea):
+        self.cola_simple.append(tarea)
+
+    def ejecutar(self):
+        while self.cola_simple:
+            tarea = self.cola_simple.pop(0)
+            print(f"Ejecutando {tarea.nombre} con tiempo {tarea.tiempo_ejecucion}s y {tarea.recursos} recursos.")
+# luego creamos la clase de la cola de Prioridad
+class ColaPrioridad:
+    def __init__(self):
+        self.cola_prioridad = []
+
+    def agregar_tarea(self, tarea):
+        heapq.heappush(self.cola_prioridad, tarea)
+
+    def ejecutar(self):
+        while self.cola_prioridad:
+            tarea = heapq.heappop(self.cola_prioridad)
+            print(f"Ejecutando {tarea.nombre} con tiempo {tarea.tiempo_ejecucion}s y {tarea.recursos} recursos.")
+
+# Simulación con diferentes tareas
+tarea1 = Tarea("Spotify", 3, 5)
+tarea2 = Tarea("Outlook", 7, 8)
+tarea3 = Tarea("Pinterest", 12, 11)
+tarea4 = Tarea("bloc de notas", 2,1)
+tarea5 = Tarea("Crome", 14, 12)
+
+#Cola simple
+print("\nSimulación con Cola simple:")
+cola_simple = Colasimple()
+cola_simple.agregar_tarea(tarea5)
+cola_simple.agregar_tarea(tarea1)
+cola_simple.agregar_tarea(tarea3)
+cola_simple.agregar_tarea(tarea4)
+cola_simple.agregar_tarea(tarea2)
+cola_simple.ejecutar()
+print("  Como se puede ver los programas se organizan")
+print("  en la manera en como llegan a la cola.")
+# Cola de Prioridad
+print("\nSimulación con Cola de Prioridad:")
+cola_prioridad = ColaPrioridad()
+cola_prioridad.agregar_tarea(tarea5)
+cola_prioridad.agregar_tarea(tarea1)
+cola_prioridad.agregar_tarea(tarea3)
+cola_prioridad.agregar_tarea(tarea4)
+cola_prioridad.agregar_tarea(tarea2)
+cola_prioridad.ejecutar()
+print("  Como se puede ver los programas se organizan")
+print("  de acuerdo a su prioridad.")
